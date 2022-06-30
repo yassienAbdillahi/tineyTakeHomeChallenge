@@ -14,16 +14,295 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 
-  <body>
-    <header>
+  <body id="pageBody" class="light-grey-header-background">
+    <header class="column"> 
+        <h1 class="large-text">tiney register</h1>
+      <br>
+    </header>  
+      
+    <!-- Tab links -->
+    <section id="tabHeaders">
+      <div class="tab row f-space-around">
+       <h2><button type="button" id="defaultOpen" class="tablinks large-text" onclick="openTab(event, 'dailyLog')">Daily log</button></h2>
+       <h2><button type="button" class="tablinks large-text" onclick="openTab(event, 'history')">History</button></h2>
+      </div>
+    </section>
 
-    </header>
+    <!-- Tab content -->
+
+    <!-- register tab -->
+    <section id="dailyLog" class="tabContent column center max-width-xl">
+      <p class="medium-text">You have <span id="expectedChildren"></span> children expected in today</p>
+
+      <hr>
+
+      <div id="childOne" class="row">
+          <!-- another row to for the img and childName+registerstatus-->
+          <div class="row f-start">
+              <div class="img-container">
+                  <img src="images/mirabel.png" alt="Picture of Mirabel" />
+                  <div class="circle"></div>
+              </div>
+
+              <div id="infoContainer" class="stack-sm">
+                  <h3 class="large-text">Mirabel</h3>
+                  <p class="medium-text" id="tabOneMirabelText">Signed out</p>
+              </div>
+
+          </div>
+          <button type="button" id="signInMirabel" class="sign-in">Sign in</button>
+          <button type="button" id="signOutMirabel" class="sign-out">Sign out</button>
+      </div>
+
+      <hr>
+
+      <div id="childTwo" class="row">
+        <!-- another row to for the img and childName+registerstatus-->
+        <div class="row f-start">
+            <div class="img-container">
+                <img src="images/moana.png" alt="Picture of Moana" />
+                <div class="circle"></div>
+            </div>
+
+            <div id="infoContainer2" class="stack-sm">
+                <h3 class="large-text">Moana</h3>
+                <p class="medium-text" id="tabOneMoanaText">Signed out</p>
+            </div>
+
+        </div>
+        <button type="button" id="signInMoana" class="sign-in">Sign in</button>
+        <button type="button" id="signOutMoana" class="sign-out">Sign out</button>
+    </div>
+
+    <hr>
+
+    <div id="childThree" class="row">
+        <!-- another row to for the img and childName+registerstatus-->
+        <div class="row f-start">
+            <div class="img-container">
+                <img src="images/aladdin.png" alt="Picture of Aladdin" />
+                <div class="circle"></div>
+            </div>
+
+            <div id="infoContainer3" class="stack-sm">
+                <h3 class="large-text">Aladdin</h3>
+                <p class="medium-text" id="tabOneAladdinText">Signed out</p>
+            </div>
+
+        </div>
+        <button type="button" id="signInAladdin" class="sign-in">Sign in</button>
+        <button type="button" id="signOutAladdin" class="sign-out">Sign out</button>
+    </div>
+
+    <hr>
+
+    <div id="childFour" class="row">
+        <!-- another row to for the img and childName+registerstatus-->
+        <div class="row f-start">
+            <div class="img-container">
+                <img src="images/jasmine.png" alt="Picture of Jasmine" />
+                <div class="circle"></div>
+            </div>
+
+            <div id="infoContainer4" class="stack-sm">
+                <h3 class="large-text">Jasmine</h3>
+                <p class="medium-text" id="tabOneJasmineText">Signed out</p>
+            </div>
+
+        </div>
+        <button type="button" id="signInJasmine" class="sign-in">Sign in</button>
+        <button type="button" id="signOutJasmine" class="sign-out">Sign out</button>
+    </div>
+
+    <hr>
+    
+    <div id="childFive" class="row">
+        <!-- another row to for the img and childName+registerstatus-->
+        <div class="row f-start">
+            <div class="img-container">
+                <img src="images/mulan.png" alt="Picture of Mulan" id="mulanPic" />
+                <div class="circle"></div>
+            </div>
+
+            <div id="infoContainer5" class="stack-sm">
+                <h3 class="large-text">Mulan</h3>
+                <p class="medium-text" id="tabOneMulanText">Starting at a later date</p>
+            </div>
+
+        </div>
+        <button type="button" id="signInMulan" class="sign-in">Sign in</button>
+        <button type="button" id="signOutMulan" class="sign-out">Sign out</button>
+    
+    </div>
+    <br>
+    <hr>
+  
+    
+    </section>
+    
+
+    <!-- history tab -->
+    <section id="history" class="tabContent column center max-width-xl">
+        <form id="form2" class="row f-center">
+            <input type="date" id="searchedDate">
+            <button type="submit" class="search">See log for chosen date</button>
+        </form>
+
+        <h3 class="large-text" id="dateTheUserChose"></h3>
+
+        <hr>
+
+        <div class="registerToBeShown">
+            <!-- just copied these from the register tab basically with some small changes
+            so that ids are not exactly the same and so I can fill in the "in at" and "out at"
+            bits later using javascript  -->
+
+            <div id="childOneReg" class="row">
+                <!-- another row for the img and childName+registerstatus-->
+                <div class="row f-start">
+                    <div class="img-container">
+                        <img src="images/mirabel.png" alt="Picture of Mirabel" />
+                    </div>
+      
+                    <div id="infoContainer6" class="stack-sm">
+                        <h3 class="large-text">Mirabel</h3>
+                        <p class="medium-text register-text" id="regTextMirabel"></p>
+                    </div>
+      
+                </div>
+                <button type="button" id="addRegisterMirabel" class="add">Add</button>
+                
+            </div>
+            <br>
+            <hr>
+
+            <div id="childTwoReg" class="row">
+                <!-- another row for the img and childName+registerstatus-->
+                <div class="row f-start">
+                    <div class="img-container">
+                        <img src="images/moana.png" alt="Picture of Moana" />
+                    </div>
+      
+                    <div id="infoContainer7" class="stack-sm">
+                        <h3 class="large-text">Moana</h3>
+                        <p class="medium-text register-text" id="regTextMoana"></p>
+                    </div>
+      
+                </div>
+                <button type="button" id="addRegisterMoana" class="add">Add</button>
+                
+            </div>
+            
+            <hr>
+
+
+            <div id="childThreeReg" class="row">
+                <!-- another row for the img and childName+registerstatus-->
+                <div class="row f-start">
+                    <div class="img-container">
+                        <img src="images/aladdin.png" alt="Picture of Aladdin" />
+                    </div>
+      
+                    <div id="infoContainer8" class="stack-sm">
+                        <h3 class="large-text">Aladdin</h3>
+                        <p class="medium-text register-text" id="regTextAladdin"></p>
+                    </div>
+      
+                </div>
+                <button type="button" id="addRegisterAladdin" class="add">Add</button>
+                
+            </div>
+            
+            <hr>
+
+
+            <div id="childFourReg" class="row">
+                <!-- another row for the img and childName+registerstatus-->
+                <div class="row f-start">
+                    <div class="img-container">
+                        <img src="images/jasmine.png" alt="Picture of Jasmine" />
+                    </div>
+      
+                    <div id="infoContainer9" class="stack-sm">
+                        <h3 class="large-text">Jasmine</h3>
+                        <p class="medium-text register-text" id="regTextJasmine"></p>
+                    </div>
+      
+                </div>
+                <button type="button" id="addRegisterJasmine" class="add">Add</button>
+                
+            </div>
+            
+            <hr>
+
+
+            <div id="childFiveReg" class="row">
+                <!-- another row for the img and childName+registerstatus-->
+                <div class="row f-start">
+                    <div class="img-container">
+                        <img src="images/mulan.png" alt="Picture of Mulan" />
+                    </div>
+      
+                    <div id="infoContainer10" class="stack-sm">
+                        <h3 class="large-text">Mulan</h3>
+                        <p class="medium-text register-text" id="regTextMulan"></p>
+                    </div>
+      
+                </div>
+                <button type="button" id="addRegisterMulan" class="add">Add</button>
+                
+            </div>
+            <br>
+            <br>
+            
+            <hr>
+
+
+
+
+        </div>
+    </section>
+
+
+    <!-- sign in confirmation page popup -->
+    <!--the modal -->
+    <section id="confirmationPageForSignIn" class="modal light-grey-header-background">
+        <!-- modal content -->
+        <div>
+             
+            <!-- modal header-->
+                <span class="close">&times;</span>
+                <br>
+                <br>
+                <h2 class="large-text center max-width-xsm">Sign In</h2>
+                <br>
+                
+                
+            <!-- modal body-->
+            <div>
+                <h3 class="large-text">Are you sure you want to sign in <span id="confirmedChildForSignIn"></span>?</h3>
+                <form id="signInConfirmation" class="">
+                    <label for="timeOfSignIn" class="medium-text">Date and time</label>
+                    <input id="timeOfSignIn" type="datetime-local"> 
+
+                    <p class="medium-text">You can adjust the time, if necessary, but try to be as accurate as you can. 
+                        Guardians will get a notification to acknowledge all sign in/outs.
+                    </p>
+
+                    <button type="submit" class="confirmSignIn">Confirm sign in</button>
+                </form>
+                <button type="button" id="absentButton" class="absent">Report as absent</button>
+            </div>
+        </div>
+    </section>
+
+    
     <main>
 
     </main>
 
     <!-- Link to script -->
     <script src="script.js"></script>
-    
+
   </body>
 </html>

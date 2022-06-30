@@ -1,0 +1,234 @@
+/*============================================================================*/
+/*                        globallly reusable classes                          */
+/*============================================================================*/
+
+.center {
+    max-width: 33vw;
+    margin: 0 auto;
+}
+
+.max-width-xsm {
+    max-width: 18vw;
+}
+
+.max-width-half {
+    max-width: 50vw;
+}
+
+.max-width-xl {
+    max-width: 85vw;
+}
+
+.stack-sm > * + * {
+    margin-top: 0rem;
+}
+
+.large-text {
+    font-size: 1.2rem;
+    color: rgb(104, 61, 183);
+}
+
+.medium-text {
+    font-size: 1rem;
+    color: rgb(91, 89, 89);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.f-space-around {
+    justify-content: space-around;
+}
+
+.f-start {
+    justify-content: flex-start;
+}
+
+.f-center {
+    justify-content: center;
+}
+
+.column {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/*============================================================================*/
+/*                          classes for the header                            */
+/*============================================================================*/
+
+.light-grey-header-background {
+    background-image: url("images/lgHeader.webp");
+    background-repeat: no-repeat;
+    background-size: 100vw 10vh;
+}
+
+/*============================================================================*/
+/*                            styles for the tabs                             */
+/*============================================================================*/
+
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: rgb(91, 89, 89);
+    transition: 0.3s;
+}
+
+/* Add border color of buttons on hover */
+.tab button:hover {
+    border: solid 0.25rem rgb(104, 61, 183)
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    /*background-color: rgba(217, 209, 209, 0.125);*/
+    color:rgb(104, 61, 183);
+}
+
+/* Style the tab content */
+.tabContent {
+    display: none;
+}
+
+/*make images responsive*/
+img {
+    max-width: 66%;
+    height: auto;
+}
+
+
+/*limit the size of the images*/
+.img-container {
+    height: 3rem;
+    width: 3rem;
+}
+
+/*custom size for the mulan pic since it's just slightly too tall*/
+#mulanPic {
+    max-width: 55%;
+}
+
+/*red circle (signalling child has been signed out) 
+[color to be changed to green by javascript once sign in is confirmed]*/
+.circle {
+    background: rgb(222, 22, 22);
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+
+    position: relative;
+    left: 1rem;
+    bottom: 1.25rem;
+}
+
+/* modifier for mulan who is starting later*/
+.amber {
+    background: orange;
+}
+
+
+/* Style the sign in/out buttons */
+.sign-in {
+    color: white;
+    background-color: palevioletred;
+    border: solid 0.15rem palevioletred;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+.sign-out {
+    color: palevioletred;;
+    background-color: white;
+    border: solid 0.15rem palevioletred;
+    border-radius: 5%;
+    cursor: pointer;
+    display: none; /*to be changed by javascript once sign in has been confirmed*/ 
+}
+
+.registerToBeShown {
+   display: none; /* to be changed by javascript once user selects a valid date*/ 
+   
+}
+
+/* exactly the same as the sign in button style except for the last line */
+.add {
+    color: white;
+    background-color: palevioletred;
+    border: solid 0.15rem palevioletred;
+    border-radius: 5%;
+    cursor: pointer;
+
+    display: none;
+}
+
+/* exactly the same as the medium text class, just using this for the javascript loop*/
+.register-text {
+    font-size: 1rem;
+    color: rgb(91, 89, 89);
+}
+
+
+/*============================================================================*/
+/*                styles for the sign-in confirmation popup                   */
+/*============================================================================*/
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(255, 255, 255); 
+}
+
+/* The close button */
+.close {
+    color: black;
+    float: right;
+    font-size: 1.75rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The confirm sign in button, exactly the same as the sign in button style */
+.confirmSignIn {
+    color: white;
+    background-color: palevioletred;
+    border: solid 0.15rem palevioletred;
+    border-radius: 5%;
+    cursor: pointer;
+}
+
+/* the report as absent button*/
+.absent {
+    border: none;
+    color: palevioletred;
+    cursor: pointer;
+}
