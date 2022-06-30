@@ -370,6 +370,7 @@ const span = document.getElementsByClassName("close")[0];
 
 for (let i = 0; i < signInButtons.length; i++) {
     signInButtons[i].addEventListener("click", displayModal);
+}    
 
 
 function displayModal () {
