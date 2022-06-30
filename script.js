@@ -335,7 +335,7 @@ function instantSignOut () {
 
 
         //at the end, alert the user 
-        alert(`${childToBeSignedOut} was succesfully signed in`);
+        alert(`${childToBeSignedOut} was succesfully signed out`);
    
 }
 
