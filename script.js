@@ -192,8 +192,10 @@ function instantSignIn () {
         
     }
 
-    //at the end, alert the user 
+    //at the end, alert the user and reload the page
     alert(`${this.id.slice(6)} was succesfully signed in`);
+
+    location.reload();
 
    
 }
@@ -334,8 +336,10 @@ function instantSignOut () {
         }
 
 
-        //at the end, alert the user 
+        //at the end, alert the user and reload the page
         alert(`${childToBeSignedOut} was succesfully signed out`);
+
+        location.reload();
    
 }
 
@@ -547,11 +551,12 @@ function confirmSignIn (event) {
             document.getElementById(tabOneParagraphToBeWrittenInto).innerHTML = `Signed in at ${justConvertedHoursAndMinutes}`;     
     }
 
-    //at the end, alert the user of succesful sign in confirmation and close the popup
+    //at the end, alert the user of succesful sign in confirmation, close the popup and reload the page
     alert(`${childToBeConfirmedAsSignedIn} was succesfully signed in`);
     
     span.click();
 
+    location.reload();
 
 }
 
@@ -653,11 +658,12 @@ function reportAbsent () {
         swapCircleColorToGrey(signInButtonForTheAbsentChild);
     }
 
-    //at the end, alert the user of succesful sign in confirmation and close the popup
+    //at the end, alert the user of succesful sign in confirmation, close the popup and reload the page
     alert(`${childToBeReportedAbsent} was marked absent`);
     
     span.click();
 
+    location.reload();
 
 }
 
