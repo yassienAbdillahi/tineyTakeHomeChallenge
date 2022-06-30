@@ -65,9 +65,26 @@ document.getElementById("expectedChildren").innerHTML = `${nurseryChildren.lengt
 
 
 const signInButtons = document.querySelectorAll(".sign-in");
+
+/*since I am adding both a click and a dblclick to the same button, the normal 
+way of doing things won't work because the dblclick will never be reached */
+
 for (let i = 0; i < signInButtons.length; i++) {
-    signInButtons[i].addEventListener("dblclick", instantSignIn);
+    signInButtons[i].addEventListener("click", clickOrDoubleClick);
 }
+
+function clickOrDoubleClick (event) {
+    if (event.detail === 1) {
+      console.log("single click");
+      //i.e. single click calls the confirmation page pop up
+      displayModal();
+    }
+    else if (event.detail === 2) {
+      console.log("double click");
+      //i.e. dbl click calls the instant sign in fn
+      instantSignIn();
+    }
+  }
 
 /*
 note regarding localstorage as relates the register log:
@@ -362,9 +379,9 @@ const span = document.getElementsByClassName("close")[0];
 // When the user clicks on any of the sign in buttons, open the modal
 //unless of course that child has ALREADY been signed in
 
-for (let i = 0; i < signInButtons.length; i++) {
+/*for (let i = 0; i < signInButtons.length; i++) {
     signInButtons[i].addEventListener("click", displayModal);
-}
+}*/
 
 function displayModal () {
     //get today's date
